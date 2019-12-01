@@ -7,6 +7,7 @@ public class PositionType {
     private static int nextId = 1;
     private String value;
 
+    
     public PositionType() {
         id = nextId;
         nextId++;
