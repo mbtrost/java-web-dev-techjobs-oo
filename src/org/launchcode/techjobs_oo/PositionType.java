@@ -7,7 +7,7 @@ public class PositionType {
     private static int nextId = 1;
     private String value;
 
-    
+
     public PositionType() {
         id = nextId;
         nextId++;
@@ -30,15 +30,15 @@ public class PositionType {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        PositionType that = (PositionType) o;
-        return id == that.id &&
-                Objects.equals(value, that.value);
+        if (!(o instanceof PositionType)) return false;
+        PositionType positionType = (PositionType) o;
+        return getId() == positionType.getId() &&
+                getValue().equals(positionType.getValue());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, value);
+        return Objects.hash(getId(), getValue());
     }
 
 
