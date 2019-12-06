@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
 
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
 
 public class JobTest {
@@ -13,7 +14,6 @@ public class JobTest {
     Job test_job_2;
     Job test_job_3;
     Job test_job_4;
-    Job test_job_5;
 
     @Before
     public void testSetUp() {
@@ -30,7 +30,12 @@ public class JobTest {
 
     @Test
     public void testJobConstructorSetsAllFields () {
-        assertEquals(3, test_job_3.getId());
+        assertTrue(test_job_3 instanceof Job);
+        assertTrue(test_job_3.getEmployer() instanceof Employer);
+        assertTrue(test_job_3.getLocation() instanceof Location);
+        assertTrue(test_job_3.getPositionType() instanceof PositionType);
+        assertTrue(test_job_3.getCoreCompetency() instanceof CoreCompetency);
+
         assertEquals("Product tester", test_job_3.getName());
         assertEquals("ACME", test_job_3.getEmployer().getValue());
         assertEquals("Desert", test_job_3.getLocation().getValue());
